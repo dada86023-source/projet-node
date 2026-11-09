@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Créer un compte</title>
+    <style>
+        .spinner {
+            width: 48px;
+            height: 48px;
+            border: 5px solid #ddd;
+            border-top-color: #2563eb;
+            border-radius: 50%;
+            animation: tourner 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes tourner {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1>Créer un compte</h1>
+
+    <form id="register-form">
+        <label for="full_name">Nom complet</label>
+        <input type="text" id="full_name" required>
+
+        <label for="email">E-mail</label>
+        <input type="email" id="email" required>
+
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" minlength="8" required>
+
+        <label for="confirm_password">Confirmer le mot de passe</label>
+        <input type="password" id="confirm_password" minlength="8" required>
+
+        <button type="submit">Créer mon compte</button>
+    </form>
+
+    <p id="message"></p>
+
+    <div id="waiting" style="display: none;">
+        <div class="spinner"></div>
+        <h2>Consultez votre e-mail</h2>
+        <p>Nous avons envoyé un lien de vérification à <strong id="sent-to"></strong>.</p>
+        <p>Cliquez sur ce lien pour activer votre compte.</p>
+    </div>
+
+    <p>Déjà un compte ? <a href="login.html">Se connecter</a></p>
+
+    <script src="js/register.js"></script>
+</body>
+</html>
